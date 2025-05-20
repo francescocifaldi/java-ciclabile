@@ -13,6 +13,13 @@ public class Ciclabile {
         }
     }
 
+    public Ciclabile() {
+        arrayDiInt = new int[2];
+        for (int i = 0; i < arrayDiInt.length; i++) {
+            arrayDiInt[i] = i + 10;
+        }
+    }
+
     public int getElementoSuccessivo() {
         return arrayDiInt[i++];
     }
@@ -25,4 +32,13 @@ public class Ciclabile {
         }
     }
 
+    public void addElemento(int num) {
+
+        int[] nuovoArray = new int[arrayDiInt.length + 1];
+        for (int i = 0; i < arrayDiInt.length; i++) {
+            nuovoArray[i] = arrayDiInt[i];
+        }
+        nuovoArray[nuovoArray.length - 1] = num;
+        arrayDiInt = nuovoArray;
+    }
 }
